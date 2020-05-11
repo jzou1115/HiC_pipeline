@@ -1,0 +1,27 @@
+{
+	"__default__" :
+	{
+		"queue"     : "highp",
+		"memory"    : "30G",
+		"name"      : "{rule}",
+		"output"    : "logs/{rule}.{wildcards.sample}.default.out",
+		"error"     : "logs/{rule}.{wildcards.sample}.default.err",
+		"mail"		: "abe",
+		"time"		: "23:59:59"
+	},
+
+	"align" :
+	{
+		"queue"     : "highp",
+		"memory"    : "10G",
+		"name"      : "{rule}",
+		"output"    : "logs/{rule}.{wildcards.sample}.out",
+		"error"     : "logs/{rule}.{wildcards.sample}.err",
+		"mail"		: "abe",
+		"time"		: "05:59:59"
+	}
+
+}
+
+
+

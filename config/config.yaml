@@ -1,0 +1,11 @@
+# path or URL to sample sheet (TSV format, columns: sample, condition, ...)
+samples: data/samples.txt
+
+chromosomes: data/chromosomes.txt
+
+fastq1: /u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R1_001.fastq
+fastq2: /u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R2_001.fastq
+
+outdir: /u/home/j/jzou1115/project-zarlab/HiC_pipeline_out/prelim
+
+ref: /u/home/j/jzou1115/project-zarlab/mm10/mm10.fa
