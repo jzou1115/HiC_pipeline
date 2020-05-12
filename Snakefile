@@ -16,10 +16,6 @@ ref = config["ref"] #reference genome fasta (with index files in same directory)
 
 outdir = config["outdir"] #base directory for output
 
-#if not os.path.isdir(outdir):
-#	os.mkdir(outdir)
-#	os.mkdir(os.path.join(outdir, "bams")
-
 ##### target rule #####
 rule all:
 	input: 
@@ -39,6 +35,19 @@ rule align:
 	shell:
 		"bwa mem -SP5 {input} | samblaster | samtools view -S -h -b -F 2316 > {output}"
 
+#hard coded align:
+#rule align:
+#	input:
+#		/u/home/j/jzou1115/project-zarlab/mm10/mm10.fa, #reference genome
+#		/u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R1_001.fastq, #fastq file 1
+#		/u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R1_002.fastq #fastq file 2
+#	output:
+#		/u/home/j/jzou1115/project-zarlab/HiC_pipeline_out/prelim/bams/{sample}.bam		
+#	conda:
+#		"envs/mapping.yaml"
+#	shell:
+#		"bwa mem -SP5 {input} | samblaster | samtools view -S -h -b -F 2316 > {output}"
+		
 #QC libraries
 rule align_qc:
 	input:
@@ -51,6 +60,6 @@ rule align_qc:
 	conda:
 		"envs/hic_qc.yaml"
 	shell:
-		"python /u/home/j/jzou1115/project-ernst/software/hic_qc/hic_qc.py -b {input} -r -o {params.prefix}"
+		"python scripts/hic_qc/hic_qc.py -b {input} -r -o {params.prefix}"
 
 

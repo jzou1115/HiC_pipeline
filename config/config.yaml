@@ -1,11 +1,16 @@
-# path or URL to sample sheet (TSV format, columns: sample, condition, ...)
+#list of samples in column "sample"
 samples: data/samples.txt
 
+#list of chromosomes in first column
 chromosomes: data/chromosomes.txt
 
+#path and file format of fastq files (paired)
 fastq1: /u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R1_001.fastq
 fastq2: /u/home/j/jzou1115/project-zarlab/pbc9/Hi-C_data/{sample}_L001_R2_001.fastq
 
+#output directory
 outdir: /u/home/j/jzou1115/project-zarlab/HiC_pipeline_out/prelim
 
+#reference genome (contains index files in same directory)
 ref: /u/home/j/jzou1115/project-zarlab/mm10/mm10.fa
+
